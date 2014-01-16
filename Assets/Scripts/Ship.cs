@@ -41,8 +41,11 @@ public class Ship : MonoBehaviour {
 		//This this.velocity = normalize(target - position) * max_velocity
 		// is the same as the lines bellow 
 		this.velocity = this.destination - position;
+
 //		if (this.velocity.magnitude > this.velocityLimit) {
+
 		this.velocity = this.velocity.normalized * this.velocityLimit;
+
 //		}
 
 		position = position + this.velocity;
@@ -52,6 +55,8 @@ public class Ship : MonoBehaviour {
 		this.start = this.transform.position;
 		if (useEulerWithVector) {
 			this.end = this.position;
+		} else {
+			this.transform.localPosition = Vector3.Lerp(start, this.position, Time.deltaTime);
 		} 
 
 		//Last variable is seconds you want Lerp to last
@@ -64,9 +69,6 @@ public class Ship : MonoBehaviour {
 
 			//Last variable is seconds you want Lerp to last
 			StartCoroutine(MoveFromTo(start, end, duration));
-		}
-		else{
-			StartCoroutine (MoveFromTo (start, end, 5f));
 		}
 	}
 

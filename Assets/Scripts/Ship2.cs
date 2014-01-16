@@ -43,6 +43,8 @@ public class Ship2 : MonoBehaviour {
 // For more info, see:
 // http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.FixedUpdate.html 
 	void FixedUpdate() {
+		this.destination = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0));
+
 		position.x = this.transform.localPosition.x;
 		position.y = this.transform.localPosition.y;
 		this.velocity = this.destination - position;
