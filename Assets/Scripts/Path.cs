@@ -4,17 +4,17 @@ using System.Collections.Generic;
 
 public class Path{
 
-	private List<Vector3> nodes;
+	private List<Vector2> nodes;
 
 	public Path() {
-		this.nodes = new List<Vector3>();
+		this.nodes = new List<Vector2>();
 	}
 
-	public void addNode(Vector3 node) {
+	public void AddNode(Vector2 node) {
 		nodes.Add(node);
 	}
 
-	public List<Vector3> getNodes() {
+	public List<Vector2> GetNodes() {
 	  return nodes;
 	}
 }
