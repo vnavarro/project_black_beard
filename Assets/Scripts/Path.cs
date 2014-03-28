@@ -14,6 +14,10 @@ public class Path{
 		nodes.Add(node);
 	}
 
+	public void AddNodes(List<Vector2> newNodes){
+		nodes.AddRange (newNodes);
+	}
+
 	public List<Vector2> GetNodes() {
 	  return nodes;
 	}
